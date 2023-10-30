@@ -60,6 +60,9 @@ document.querySelector('.js-products-grid').innerHTML= productsHTML;
 
 // Adding event listeners to the button to make it interactive).// you have to change the Id to camelCase from kebab case in your functions.
 
+// when you click on each button with the class of js-add-to cart, you add an eventlistener to the button which is typically click. 
+//then you add a function within the event listener (arrow function) which will work when you click on the button. //
+
 document.querySelectorAll('.js-add-to-cart')
 .forEach((button) => {
   button.addEventListener('click',() => {
@@ -81,14 +84,22 @@ document.querySelectorAll('.js-add-to-cart')
       quantity: 1 
     });
     }
-    console.log(cart);
+
+    let cartQuantity = 0;
+
+    cart.forEach((item) => {
+      cartQuantity += item.quantity;
+    });
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
   });
 });
 
-// when you click on each button with the class of js-add-to cart, you add an eventlistener to the button which is typically click. 
-//then you add a function within the event listener (arrow function) which will work when you click on the button. //
+// How to make the cart quantity interactive>//
+/*
+1. calculate the quantity.(total numbers of quantity in the cart)
+2. Put that quantity on the page.
+*/
 
 
-   
   
 
