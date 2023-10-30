@@ -1,4 +1,4 @@
-const products= [{
+const products = [{
 image: 'images/ratings/rating-45.png',
 name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
 rating: {
@@ -22,6 +22,14 @@ priceCents: 2095
         count: 57
     },
     priceCents: 799
+},{
+  image: 'images/products/black-2-slot-toaster.jpg',
+  name: '2 Slot Toaster - Black',
+  rating: {
+    stars: 5,
+    count: 2197
+  },
+  priceCents: 1899,
 }];
 
 let productsHTML = '';
@@ -72,11 +80,10 @@ products.forEach((product) => {
         Added
       </div>
 
-      <button class="add-to-cart-button button-primary>
+      <button class="add-to-cart-button button-primary">
         Add to Cart
       </button>
     </div>
   `;
 });
-
-console.log(productsHTML);
+document.querySelector('.js-products-grid').innerHTML= productsHTML;
