@@ -47,10 +47,48 @@ products.forEach((product) => {
         Added
       </div>
 
-      <button class="add-to-cart-button button-primary">
+      <button class="add-to-cart-button 
+      button-primary js-add-to-cart" 
+      data-product-id="${product.id}">
         Add to Cart
       </button>
     </div>
   `;
 });
+
 document.querySelector('.js-products-grid').innerHTML= productsHTML;
+
+// Adding event listeners to the button to make it interactive).// you have to change the Id to camelCase from kebab case in your functions.
+
+document.querySelectorAll('.js-add-to-cart')
+.forEach((button) => {
+  button.addEventListener('click',() => {
+  const productId = button.dataset.productId;
+
+  let matchingItem;
+
+  cart.forEach((item) => { 
+
+   if (productId === item.productId) {
+      matchingItem = item;
+    }
+  });
+  if (matchingItem) {
+    matchingItem.quantity += 1;
+  } else {
+    cart.push({
+      productId: productId,
+      quantity: 1 
+    });
+    }
+    console.log(cart);
+  });
+});
+
+// when you click on each button with the class of js-add-to cart, you add an eventlistener to the button which is typically click. 
+//then you add a function within the event listener (arrow function) which will work when you click on the button. //
+
+
+   
+  
+
