@@ -7,7 +7,7 @@ let productsHTML = '';
 
 products.forEach((product) => {
   productsHTML += `
-    <div class="product-container">
+    <div class="product-container ">
       <div class="product-image-container">
         <img class="product-image"
           src="${product.image}">
@@ -65,7 +65,7 @@ document.querySelector('.js-products-grid').innerHTML= productsHTML;
 /* Adding event listeners to the button to make it interactive).// you have to change the Id to camelCase from kebab case in your functions.
 
 1.when you click on each button with the class of js-add-to cart, you add an eventlistener to the button which is typically click. 
-then you add a function within the event listener (arrow function) which will work when you click on the button. */
+then you add a function within the eventlistener (arrow function) which will work when you click on the button. */
 
 document.querySelectorAll('.js-add-to-cart')
 .forEach((button) => {
@@ -85,7 +85,7 @@ function updateCartQuantity(){
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
   }
 
-/* How to make the cart quantity interactive>
+/* How to make the cart quantity interactive? >
 1. calculate the quantity.(total numbers of quantity in the cart)
 2. Put that quantity on the page.
 */
